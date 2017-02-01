@@ -47,12 +47,11 @@ public class AList implements NList {
 
     @Override
     public void remove(int index) {
-        if (index == realSize-1) {array[realSize]=0; realSize--;}
+        if (index == realSize-1) {array[realSize--]=0;}
         else {
             try {
                 System.arraycopy(array, index + 1, array, index, realSize - index - 1);
-                array[realSize] = 0;
-                realSize--;
+                array[realSize--] = 0;
             }
             catch(IndexOutOfBoundsException e){System.out.printf("Индекс за пределами массива%n");}
         }
